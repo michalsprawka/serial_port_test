@@ -31,7 +31,7 @@ const createTimeString = (date) => {
 //connect to the serial port
 
 const port = new SerialPort({
-    path: 'COM3',
+    path: '/dev/ttyACM0',
     baudRate: 9600
     }, function(err) {
         if(err) {
