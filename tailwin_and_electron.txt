@@ -1,0 +1,81 @@
+1 create directory
+2 cd directory
+3 create src directory => not create any directory
+4 npm init (w podstawowym folderze !!!)	
+	entry point - main.js 
+	description
+	author
+5. npm install electron --save-dev 
+6. npm install -D tailwindcss
+7 npx tailwindcss init
+code .
+8. in tailwind.config.js add: content: ["./src/**/*.{html,js}"], => ["./*.{html,js}"]
+9. in src create input.css => in root
+10 in input.css add
+	@tailwind base;
+	@tailwind components;
+	@tailwind utilities;
+11 in terminal
+	npx tailwindcss -i ./src/input.css -o ./src/output.css --watch
+	=> npx tailwindcss -i ./input.css -o ./output.css --watch 
+12 open new terminal
+
+13. create main.js
+
+const { app, BrowserWindow } = require('electron/main')
+
+const createWindow = () => {
+  const win = new BrowserWindow({
+    width: 800,
+    height: 600
+  })
+
+  //win.loadFile('src/index.html') => ('index.html')
+    win.loadFile('index.html')
+
+//Open the DevTools.
+
+setTimeout(() => {
+    win.webContents.openDevTools();
+  }, 1000) // wait long enough for the page to load
+}
+
+app.whenReady().then(() => {
+  createWindow()
+
+  app.on('activate', () => {
+    if (BrowserWindow.getAllWindows().length === 0) {
+      createWindow()
+    }
+  })
+})
+
+app.on('window-all-closed', () => {
+  if (process.platform !== 'darwin') {
+    app.quit()
+  }
+})
+
+14.  in package.json in scripts  "scripts": {
+    		"start": "electron .", }
+
+15. create src/index.html => index in root
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+  <link href="./output.css" rel="stylesheet">
+</head>
+<body>
+  <h1 class="text-3xl font-bold underline">
+    Hello world!
+  </h1>
+</body>
+</html>
+
+16 npm run start :)
+
+
