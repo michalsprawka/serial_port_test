@@ -1,4 +1,4 @@
-### Electronjs app for displaying data from serial
+# Electronjs app for displaying data from serial
 
 This program is indented to run on raspberry pi 5 with arduino R4 connected through usb. Arduino is connected to Arduino IOT Cloud
 
