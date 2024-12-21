@@ -4,6 +4,8 @@ const url = require('url')
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
+
+//github test line
 let mainWindow
 
 function createWindow() {
