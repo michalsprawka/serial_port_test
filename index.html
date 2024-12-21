@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <link href="./output.css" rel="stylesheet">
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
+    <title>Hello World!!</title>
+    <!-- <style>
+        table { border-collapse: collapse; }
+        table, th, td { border: 1px solid black; }
+    </style> -->
+</head>
+
+<body class="bg-gray-800 text-white">
+    <div class="mt-5 h-3 w-full bg-yellow-300"></div> 
+    <div class="h-3 w-full bg-orange-500"></div> 
+    <div class="mb-2 h-3 w-full bg-red-600"></div>  
+    <!-- <h1 class ="text-xl font-bold">Hello</h1> -->
+
+    We are using Node.js <span id="node-version" class="text-amber-900"></span>, Chromium <span id="chrome-version"></span>, Electron <span id="electron-version"></span>, and Serialport <span id="serialport-version"></span>
+
+    <div id="error" class="text-xl text-red-700 p-2"></div>
+    <div id="ports" class="text-xl text-green-700 p-2"></div>
+    <div id="msg" class="text-xl text-blue-700 p-2"></div>
+    <div class="flex justify-end">
+        <div>
+            <button class="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700" id="sendon" >
+                ON
+            </button>
+            <button class="px-4 py-2 font-bold text-white bg-red-500 rounded hover:bg-red-700" id="sendoff" >
+                    OFF
+            </button>
+        </div> 
+    </div>
+   
+    <div id="txtmsg" class="text-2xl text-blue-800 font-bold p-2 "></div>
+
+    <div class="p-2 text-2xl font-bold"> Temperatura zewnętrzna:  <span id="temperatureoutfirst" class="text-6xl font-bold"></span> <span id="temperatureoutothers" class="text-xl text-gray-600"></span> </div>
+    <div class="p-2 text-2xl font-bold"> Ciśnienie:  <span id="pressurefirst" class="text-6xl font-bold"></span> <span id="pressureothers" class="text-xl text-gray-600"></span> </div>
+    <div id="console" class="bg-black text-white  h-48 w-full m-2">
+        <div id="row-0">empty</div>
+        <div id="row-1">empty</div>
+        <div id="row-2">empty</div>
+        <div id="row-3">empty</div>
+        <div id="row-4">empty</div>
+    </div>
+</body>
+
+<script src="./renderer.js"></script>
+
+</html>
