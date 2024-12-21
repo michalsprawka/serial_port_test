@@ -10,6 +10,11 @@ to run on wayland architecture add this line to ~/.bashrc file `export DISPLAY=:
 
 to run program print `npm run start` in terminal
 
-## how to make executable
+## how to create executable on Rpi5
 
-will be added later
+See this [site](https://www.electronjs.org/docs/latest/tutorial/tutorial-packaging)
+
+Executable will be created in out/make ....deb directory
+
+For installing info see this [site](https://chipwired.com/install-deb-file-raspberry-pi/)
+
