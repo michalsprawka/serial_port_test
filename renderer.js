@@ -9,6 +9,7 @@ const tableify = require('tableify')
 //lets create array which simulate queue of incoming data (up to five elements)
 let tempQueue = ['','','','','']
 let pressureQueue = ['','','','','']
+const READING_FREQUENCY = 1
 //lets create five rows in the console
 let rows = ['empty','empty','empty','empty','empty']
 //lets create date some hours ago to simulate last time of incoming data
@@ -64,7 +65,7 @@ parser.on('data', (line) => {
     }else if (line[0] ==='$') {
       //remove first character from line
       const timeOfIncoming = new Date()
-      if(dateDifferenceInSeconds(timeOfIncoming, lastTimeOfIncomingTemperature) > 1) {
+      if(dateDifferenceInSeconds(timeOfIncoming, lastTimeOfIncomingTemperature) > READING_FREQUENCY) {
         line = line.slice(1)
         tempQueue.shift()
         tempQueue.push(line)
@@ -76,7 +77,7 @@ parser.on('data', (line) => {
     } else if(line[0] === '&') {
       //remove first character from line
       const timeOfIncoming = new Date()
-      if(dateDifferenceInSeconds(timeOfIncoming, lastTimeOfIncomingPressure) > 1) {
+      if(dateDifferenceInSeconds(timeOfIncoming, lastTimeOfIncomingPressure) > READING_FREQUENCY) {
         line = line.slice(1)
         pressureQueue.shift()
         pressureQueue.push(line)
